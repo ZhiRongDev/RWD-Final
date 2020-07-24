@@ -82,6 +82,11 @@ a {
 
 .topNav {
   background-color: #000000;
+  opacity: 0.8;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 100;
 }
 
 .topNav a {
@@ -102,6 +107,8 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .topNav ul a {
@@ -122,6 +129,15 @@ a {
   color: #000000;
 }
 
+.topNav .Menu-toggle {
+  display: none;
+  position: absolute;
+  font-size: 16px;
+  padding: 20px;
+  right: 10px;
+  top: 0;
+}
+
 .topNav-logo {
   display: block;
   width: 204px;
@@ -132,6 +148,35 @@ a {
   text-indent: 101%;
   white-space: nowrap;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .topNav .wrap {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .topNav ul {
+    max-height: 0;
+    overflow: hidden;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+  }
+  .topNav ul li {
+    width: 100%;
+  }
+  .topNav ul a {
+    text-align: center;
+  }
+  .topNav ul li:last-child a {
+    margin-right: 0;
+  }
+  .topNav .Menu-toggle {
+    display: block;
+  }
+  .topNav.openMenu ul {
+    max-height: 573px;
+  }
 }
 
 .banner {
@@ -171,6 +216,19 @@ a {
 
 .banner-text .fa-utensils {
   margin: 0 5px;
+}
+
+.banner-text br {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    background-image: url(../img/header_mobile.png);
+  }
+  .banner-text br {
+    display: inline;
+  }
 }
 
 .tips-title {
